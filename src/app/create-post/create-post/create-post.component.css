@@ -1,0 +1,127 @@
+.create-post-container{
+
+    display: flex;
+    /* width: 100vw; */
+    padding: 1.5rem 5rem 0 5rem;
+
+    /* margin: 4rem 2rem 0 2rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 2px 2px 12px #aaa;
+    
+    width: 80%; */
+}
+
+@media(max-width: 810px) {
+  .create-post-container {
+    padding: 1rem !important;
+  }
+}
+
+@media(max-width: 679px){
+  .furnish-flooring{
+    flex-direction: column !important;
+  }
+}
+
+@media(max-width: 480px) {
+  .radio-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .checkbox-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .divide{
+    flex-direction: column !important;
+  }
+
+  button {
+    width: 80% !important;
+  }
+
+  .button-area{
+    gap: 0.8rem !important;
+    align-items: center !important;
+  }
+}
+
+.post-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 2px 2px 12px #aaa;
+    width: 100%;
+    max-height: 75vh;
+    overflow-y: scroll
+}
+
+button {
+    width: 20%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #28a745;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+
+    &:disabled {
+      background-color: #ccc;
+    }
+  }
+
+.imagePreviews {
+    padding: 1rem 1rem 1rem 1rem;
+    display: flex;
+    gap: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 2px 2px 12px #aaa;
+    overflow-x: scroll;
+    width: fit-content;
+    max-width: 95%;
+}
+
+.checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Two columns layout */
+  gap: 10px; /* Space between checkboxes */
+  margin-bottom: 1rem;
+}
+
+.radio-grid {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #fff;
+  transition: background-color 0.3s;
+}
+
+.checkbox-item:hover {
+  background-color: #E5D9F2; /* Change background on hover */
+}
+
+.checkbox-item.active {
+  background-color: #E5D9F2; /* Change background on hover */
+}
+
+
+input[type="checkbox"] {
+  margin-right: 10px; /* Space between checkbox and label */
+}
+
+
+input:hover, select:hover, textarea:hover {
+  background-color: #E5D9F2;
+}
+
+small {
+  color: red;
+}

@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    
+}
+
+.custom-overlay-panel {
+    width: 90vw; /* Set the desired width */
+    height: 90vh; /* Set the desired height */
+    max-height: 90vh;
+    overflow-y: scroll; 
+    padding: 20px; /* Optional padding */
+    background: white; /* Background color */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    position: fixed; /* Position it fixed in viewport */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for centering */
+    z-index: 1001; /* Ensure it's above backdrop */
+  }
+/* html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */

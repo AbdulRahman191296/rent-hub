@@ -1,0 +1,22 @@
+@media(max-width: 820px) {
+    .post-card{
+      flex-direction: column !important;
+    }
+    .home-container {
+      flex-direction: column !important;
+    }
+  }
+
+.home-image {
+    max-width: 350px;
+    max-height: 250px;
+    margin: 5px;
+}  
+
+@media(max-width: 420px) {
+    .home-image {
+        max-width: 16rem !important;
+        max-height: 10rem !important;
+        margin: 5px;
+    }  
+  }

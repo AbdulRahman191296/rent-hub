@@ -1,0 +1,256 @@
+<div class="create-post-container" style="z-index: -1;">
+    <div class="post-card" style="padding: 1rem 2rem 1rem 2rem;">
+        <form [formGroup]="postForm">
+            <div style="margin-bottom: 1rem;">
+            <div style="font-size: 18px; font-weight: 600; margin-bottom: 0.2rem;">
+                Choose your Apartment/Building
+                
+            </div>
+            <div class="divide" style="display: flex; gap: 2rem;">
+                <div class="apartment-select" style="display: flex; flex: 2; flex-direction: column;">
+                    <label for="">Choose your Apartment/Building</label>
+                    <select id="" style="height: 30px;" formControlName ="propertyType">
+                        <option value="apt">Apartment</option>
+                        <option value="blg">Building</option>
+                    </select>
+                    <div *ngIf="postForm.get('propertyType')?.invalid && postForm.get('propertyType')?.touched">
+                        <small *ngIf="postForm.get('propertyType')?.errors?.['required']">Property type is required.</small>
+                      </div>
+                </div>
+                <div class="apartment-name" style="display: flex; flex: 2; flex-direction: column;">
+                    <label for="">Enter the name of the property</label>
+                    <input type="text" style="height: 23px;" formControlName ="propertyName">
+                    <div *ngIf="postForm.get('propertyName')?.invalid && postForm.get('propertyName')?.touched">
+                        <small *ngIf="postForm.get('propertyName')?.errors?.['required']">Property name is required.</small>
+                      </div>
+                </div>
+            </div>
+        </div> 
+        <div style="margin-bottom: 1rem;">
+            <div style="font-size: 18px; font-weight: 600; margin-bottom: 0.2rem;">
+                Is this a shared property?     
+            </div>
+            <label style="display: flex;
+    align-items: center; margin-bottom: 0.2rem;">
+                <input type="radio" value="yes" style="align-self: baseline;" formControlName ="sharedProperty">
+                Yes
+              </label>
+              <!-- <br> -->
+              <label style="display: flex;
+    align-items: center;">
+                <input type="radio" value="no" style="align-self: baseline;" formControlName ="sharedProperty">
+                No
+              </label>
+              <div *ngIf="postForm.get('sharedProperty')?.invalid && postForm.get('sharedProperty')?.touched">
+                <small *ngIf="postForm.get('sharedProperty')?.errors?.['required']">This field is required.</small>
+              </div>
+        </div>
+        <div style="margin-bottom: 1rem;">
+            <div style="font-size: 18px; font-weight: 600; margin-bottom: 0.2rem;">
+                Property Location   
+            </div>
+            <div style="display: flex; ">
+                <div class="apartment-select" style="display: flex; flex-direction: column;">
+                    <label for="">Street Address</label>
+                    <input type="text" style="height: 23px;" placeholder="Enter street address" formControlName ="location">
+                    <div *ngIf="postForm.get('location')?.invalid && postForm.get('location')?.touched">
+                        <small *ngIf="postForm.get('location')?.errors?.['required']">Location is required.</small>
+                      </div>
+                </div>
+            </div>
+        </div>
+        <div style="margin-bottom: 1rem;">
+            <div style="font-size: 18px; font-weight: 600; margin-bottom: 0.2rem;">
+                Property Details
+            </div>
+            <div class="divide" style="display: flex; gap: 2rem; ">
+                <div class="apartment-select" style="display: flex; flex: 2; flex-direction: column;">
+                    <label for="">Square Feet</label>
+                    <input type="text" placeholder="Enter area in square feet" style="height: 23px;" formControlName ="area">
+                    <div *ngIf="postForm.get('area')?.invalid && postForm.get('area')?.touched">
+                        <small *ngIf="postForm.get('area')?.errors?.['required']">Area is required.</small>
+                      </div>
+                </div>
+                <div class="apartment-name" style="display: flex; flex: 2; flex-direction: column;">
+                    <label for="">Stay/Lease type</label>
+                    <label style="display: flex;
+    align-items: center; margin-bottom: 0.2rem;">
+                <input type="radio" value="lt" style="align-self: baseline;" formControlName ="type">
+                Long term
+              </label>
+              <!-- <br> -->
+              <label style="display: flex;
+    align-items: center;">
+                <input type="radio" value="st" style="align-self: baseline;" formControlName ="type">
+                Short term
+              </label>
+              <div *ngIf="postForm.get('type')?.invalid && postForm.get('type')?.touched">
+                <small *ngIf="postForm.get('type')?.errors?.['required']">Duration type is required.</small>
+              </div>
+                </div>
+            </div>
+            <div class="divide" style="display: flex; gap: 2rem; margin-top: 0.5rem; ">
+                <div class="apartment-select" style="display: flex; flex: 2; flex-direction: column;">
+                    <label for="">Bedrooms</label>
+                    <select id="" style="height: 30px;" formControlName ="bedrooms">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="3+">3+</option>
+                    </select>
+                    <div *ngIf="postForm.get('bedrooms')?.invalid && postForm.get('bedrooms')?.touched">
+                        <small *ngIf="postForm.get('bedrooms')?.errors?.['required']">Bedroom count is required.</small>
+                      </div>
+                </div>
+                <div class="apartment-select" style="display: flex; flex: 2; flex-direction: column;">
+                    <label for="">Bathrooms</label>
+                    <select id="" style="height: 30px;" formControlName ="bathrooms">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="3+">3+</option>
+                    </select>
+                    <div *ngIf="postForm.get('bathrooms')?.invalid && postForm.get('bathrooms')?.touched">
+                        <small *ngIf="postForm.get('bathrooms')?.errors?.['required']">Bathroom count is required.</small>
+                      </div>
+                </div>
+            </div>
+        </div>
+        
+        <div style="margin-bottom: 1rem;">
+            <div style="font-size: 18px; font-weight: 600; margin-bottom: 0.2rem;">
+                Expected Rent
+            </div>
+            <div class="divide" style="display: flex; gap: 2rem; ">
+                <div class="apartment-select" style="display: flex; flex: 2; flex-direction: column;">
+                    <label for="">Expected Rent</label>
+                    <input type="text" placeholder="Enter expected rent" style="height: 23px;" formControlName ="rent">
+                    <div *ngIf="postForm.get('rent')?.invalid && postForm.get('rent')?.touched">
+                        <small *ngIf="postForm.get('rent')?.errors?.['required']">Rent is required.</small>
+                      </div>
+                </div>
+                <div class="apartment-name" style="display: flex; flex: 2; flex-direction: column;">
+                    <label for="">Price Mode</label>
+                    <label style="display: flex;
+    align-items: center; margin-bottom: 0.2rem;">
+                <input type="radio" value="perMonth" style="align-self: baseline;" formControlName ="mode">
+                Per month
+              </label>
+              <!-- <br> -->
+              <label style="display: flex;
+    align-items: center;">
+                <input type="radio" value="utilitiesIncluded"  style="align-self: baseline;" formControlName ="mode">
+                Utilities included in rent
+              </label>
+              <div *ngIf="postForm.get('mode')?.invalid && postForm.get('mode')?.touched">
+                <small *ngIf="postForm.get('mode')?.errors?.['required']">Mode is required.</small>
+              </div>
+                </div>
+            </div>
+        </div>
+        <div style="font-size: 18px; font-weight: 600; margin-bottom: 0.2rem;">
+            Select Amenities
+        </div>
+        <div class="checkbox-grid">
+            
+        <div formArrayName="amenities" *ngFor="let amenity of amenitiesList;let i= index " class="checkbox-item"   >
+    <label>
+      <input  type="checkbox"  [formControlName]="i" />
+      {{ amenity}}
+    </label>
+  </div>
+
+</div>
+        <div class="furnish-flooring" style="margin-bottom: 1rem; display: flex;">
+            <div style="display: flex; flex-direction: column; flex: 1.5;">
+            <div style="font-size: 18px; font-weight: 600; margin-bottom: 0.2rem;">
+                Is this property furnished?     
+            </div>
+            <label style="display: flex;
+    align-items: center; margin-bottom: 0.2rem;">
+                <input type="radio"  style="align-self: baseline;" value="yes" formControlName ="furnished">
+                Yes
+              </label>
+              <!-- <br> -->
+              <label style="display: flex;
+    align-items: center;">
+                <input type="radio"  style="align-self: baseline;" value="no" formControlName ="furnished">
+                No
+              </label>
+              <div *ngIf="postForm.get('furnished')?.invalid && postForm.get('furnished')?.touched">
+                <small *ngIf="postForm.get('furnished')?.errors?.['required']">This field is required.</small>
+              </div>
+            </div>
+            <div style="display: flex; flex-direction: column; flex: 2.5;">
+                <label style="font-size: 18px; font-weight: 600; margin-bottom: 0.2rem;" for="">Flooring Type</label>
+             
+            <div class="checkbox-grid radio-grid" >
+             
+                
+                
+            <ng-container *ngFor="let floor of flooringTypes">
+                <label style="display: flex;
+    align-items: center; margin-bottom: 0.2rem;">
+                <input type="radio"  style="align-self: baseline;" [value]="floor" formControlName ="floorType">
+                {{floor}}
+              </label>
+            </ng-container>
+            <div *ngIf="postForm.get('floorType')?.invalid && postForm.get('floorType')?.touched">
+                <small *ngIf="postForm.get('floorType')?.errors?.['required']">Floor type is required.</small>
+              </div>
+
+            
+      </div>
+    </div>
+    
+    
+        </div>
+        <div style="margin-bottom: 1rem;">
+            <div style="font-size: 18px; font-weight: 600; margin-bottom: 0.2rem;">
+                Description
+                
+            </div>
+            <div style="display: flex; flex-direction: column;">
+                <div class="apartment-select" style="display: flex; flex-direction: column;">
+                    <label for="">Title</label>
+                    <input type="text" style="height: 23px; margin-bottom: 0.3rem;" placeholder="Enter your ad title" formControlName ="title">
+                    <div *ngIf="postForm.get('title')?.invalid && postForm.get('title')?.touched">
+                        <small *ngIf="postForm.get('title')?.errors?.['required']">Title is required.</small>
+                      </div>
+                </div>
+                <div class="apartment-select" style="display: flex; flex-direction: column;">
+                    <label for="">Description</label>
+                    <!-- <p type="text" style="height: 23px;" placeholder="Enter detailed description"> -->
+                        <textarea rows="4"  id="" placeholder="Enter detailed description" formControlName ="desc"></textarea>
+                        <div *ngIf="postForm.get('desc')?.invalid && postForm.get('desc')?.touched">
+                            <small *ngIf="postForm.get('desc')?.errors?.['required']">Description is required.</small>
+                          </div>
+                </div>
+            </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 0.3rem; margin-bottom: 1rem;">
+            <label for="">Upload photos</label>
+            <input type="file" (change) = "onFileChange($event)" accept="image/*" multiple required>
+            <button (click) = "upload()">Upload</button>
+        </div>
+
+        <div *ngIf="previewUrls.length" style="margin-bottom: 2rem;">
+            <h3>Previews:</h3>
+            <div class="imagePreviews">
+            <div *ngFor="let preview of previewUrls" style="border: 4px solid #E5D9F2;
+    border-radius: 5px;">
+              <img [src]="preview" alt="Image Preview" style="max-width: 200px; max-height: 200px; margin: 5px;"/>
+            </div>
+        </div>
+          </div>
+        <div class="divide button-area" style="display: flex; justify-content: center;gap: 4rem;">
+            <button type="submit" [disabled]="postForm.invalid" (click)="onSubmit()" >POST</button>
+            <button [routerLink]="['/home']" >CANCEL</button> 
+            <button [disabled]="postForm.invalid" (click)="onPreviewClick()" >PREVIEW</button>
+        </div>
+        </form>
+    </div>
+    
+</div>
+
+<!-- [ngClass] = "{'active': amenity.selected == true}" -->

@@ -1,0 +1,57 @@
+button {
+    width: 20%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #28a745;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+
+    &:disabled {
+      background-color: #ccc;
+    }
+  }
+
+  @media(max-width: 480px) {
+    .image {
+        max-width: 16rem !important;
+        max-height: 10rem !important;
+        margin: 5px;
+    }  
+
+    .details-container{
+      padding: 0.5rem !important;
+    }
+
+    .details-card {
+      padding: 1rem !important;
+    }
+
+   .grid-container {
+    grid-template-columns: repeat(2, 1fr) !important;
+   }
+
+   .details-buttons {
+    flex-direction: column !important;
+    gap: 1rem !important;
+    align-items: center !important;
+    
+   }
+
+   button {
+    width: 80% !important;
+  }
+
+
+  }
+
+  @media(max-width: 620px){
+    .contact-and-amenities {
+      flex-direction: column !important;
+    }
+
+    
+  }
+
+ 

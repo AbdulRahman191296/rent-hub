@@ -1,12 +1,48 @@
 import { TestBed } from '@angular/core/testing';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
+
+
+import { Firestore } from 'firebase/firestore';
+import { UserService } from './authentication/user.service';
+import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore'; // For Firestore
+import { getAuth, provideAuth } from '@angular/fire/auth';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        RouterModule.forRoot([])
+        RouterModule.forRoot([]),
+        AngularFireModule.initializeApp({
+          apiKey: "AIzaSyCHbHUAOUTJg7-_Ufj0J05lsyLSyStnwRE",
+          authDomain: "rent-hub-4404.firebaseapp.com",
+          projectId: "rent-hub-4404",
+          storageBucket: "rent-hub-4404.appspot.com",
+          messagingSenderId: "757485454934",
+          appId: "1:757485454934:web:ccc6e9b9f388093e045df7",
+        }), // Initialize Firebase
+        AngularFirestoreModule,
+        
+      ],
+      providers: [
+        UserService,
+        Router,
+        provideFirebaseApp(() => initializeApp(
+          {
+            apiKey: "AIzaSyCHbHUAOUTJg7-_Ufj0J05lsyLSyStnwRE",
+            authDomain: "rent-hub-4404.firebaseapp.com",
+            projectId: "rent-hub-4404",
+            storageBucket: "rent-hub-4404.appspot.com",
+            messagingSenderId: "757485454934",
+            appId: "1:757485454934:web:ccc6e9b9f388093e045df7",
+          }
+        )),
+        provideFirestore(() => getFirestore()),
+      provideAuth(() => getAuth()),
       ],
       declarations: [
         AppComponent
