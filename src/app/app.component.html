@@ -27,7 +27,7 @@
         <ng-container *ngIf = "!currentUser; else signout_template">
           <div class="gray-text" routerLink = '/login' >LOGIN</div>
         <div class="gray-text" routerLink = '/sign-up'>SIGN UP</div>
-        <div class="gray-text">PROFILE</div>
+        <div routerLink='/home' class="gray-text">HOME</div>
         </ng-container>
         <ng-template #signout_template>
           <div *ngIf="homeRoute" class="gray-text" (click)="homeRoute = false" [routerLink] = "['/create-post']" >POST PROPERTY</div>
@@ -42,7 +42,7 @@
     <ng-container *ngIf = "!currentUser; else signout_template">
       <div class="gray-text" routerLink = '/login' >LOGIN</div>
     <div class="gray-text" routerLink = '/sign-up'>SIGN UP</div>
-    <div class="gray-text">PROFILE</div>
+    <div routerLink='/home' class="gray-text">HOME</div>
     </ng-container>
     <ng-template #signout_template>
       <div *ngIf="homeRoute" class="gray-text" (click)="homeRoute = false" [routerLink] = "['/create-post']" >POST PROPERTY</div>

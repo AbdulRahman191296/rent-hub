@@ -21,6 +21,9 @@ const routes: Routes = [{
 },
 {
   path: 'details', component: DetailsComponent, canActivate: [authGuard]
+},
+{
+  path: '', component: HomeComponent
 }];
 
 @NgModule({
