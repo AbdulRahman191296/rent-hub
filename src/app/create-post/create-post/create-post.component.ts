@@ -64,6 +64,8 @@ export class CreatePostComponent {
       flooringType: this.postForm.get('floorType')?.value,
       mode: this.postForm.get('mode')?.value,
       furnished: this.postForm.get('furnished')?.value,
+      featured: this.postForm.get('featured')?.value,
+      phone: this.postForm.get('phone')?.value,
       title: this.postForm.get('title')?.value,
       desc: this.postForm.get('desc')?.value,
       images: this.previewUrls,
@@ -94,6 +96,8 @@ export class CreatePostComponent {
       floorType: ['', Validators.required],
       title: ['', Validators.required],
       desc: ['', Validators.required],
+      phone: ['', Validators.required],
+      featured: ['', Validators.required],
       amenities: this.formBuilder.array([])
     }); 
   }

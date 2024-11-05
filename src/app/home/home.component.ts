@@ -281,7 +281,7 @@ export class HomeComponent {
     }
 
     else if(this.selectedListingFilter === "Featured") {
-      this.filteredPosts = this.posts.filter( (x: any) => x.featured == true)
+      this.filteredPosts = this.posts.filter( (x: any) => x.featured == 'Yes')
     }
 
     else {

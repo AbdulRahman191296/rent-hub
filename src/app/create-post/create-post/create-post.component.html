@@ -66,7 +66,7 @@
             <div class="divide" style="display: flex; gap: 2rem; ">
                 <div class="apartment-select" style="display: flex; flex: 2; flex-direction: column;">
                     <label for="">Square Feet</label>
-                    <input type="text" placeholder="Enter area in square feet" style="height: 23px;" formControlName ="area">
+                    <input type="number" placeholder="Enter area in square feet" style="height: 23px;" formControlName ="area">
                     <div *ngIf="postForm.get('area')?.invalid && postForm.get('area')?.touched">
                         <small *ngIf="postForm.get('area')?.errors?.['required']">Area is required.</small>
                       </div>
@@ -75,13 +75,13 @@
                     <label for="">Stay/Lease type</label>
                     <label style="display: flex;
     align-items: center; margin-bottom: 0.2rem;">
-                <input type="radio" value="lt" style="align-self: baseline;" formControlName ="type">
+                <input type="radio" value="LongTerm" style="align-self: baseline;" formControlName ="type">
                 Long term
               </label>
               <!-- <br> -->
               <label style="display: flex;
     align-items: center;">
-                <input type="radio" value="st" style="align-self: baseline;" formControlName ="type">
+                <input type="radio" value="ShortTerm" style="align-self: baseline;" formControlName ="type">
                 Short term
               </label>
               <div *ngIf="postForm.get('type')?.invalid && postForm.get('type')?.touched">
@@ -117,6 +117,7 @@
             </div>
         </div>
         
+        
         <div style="margin-bottom: 1rem;">
             <div style="font-size: 18px; font-weight: 600; margin-bottom: 0.2rem;">
                 Expected Rent
@@ -124,7 +125,7 @@
             <div class="divide" style="display: flex; gap: 2rem; ">
                 <div class="apartment-select" style="display: flex; flex: 2; flex-direction: column;">
                     <label for="">Expected Rent</label>
-                    <input type="text" placeholder="Enter expected rent" style="height: 23px;" formControlName ="rent">
+                    <input type="number" placeholder="Enter expected rent" style="height: 23px;" formControlName ="rent">
                     <div *ngIf="postForm.get('rent')?.invalid && postForm.get('rent')?.touched">
                         <small *ngIf="postForm.get('rent')?.errors?.['required']">Rent is required.</small>
                       </div>
@@ -144,6 +145,37 @@
               </label>
               <div *ngIf="postForm.get('mode')?.invalid && postForm.get('mode')?.touched">
                 <small *ngIf="postForm.get('mode')?.errors?.['required']">Mode is required.</small>
+              </div>
+                </div>
+            </div>
+        </div>
+        <div style="margin-bottom: 1rem;">
+            <div style="font-size: 18px; font-weight: 600; margin-bottom: 0.2rem;">
+                Contact/Featured
+            </div>
+            <div class="divide" style="display: flex; gap: 2rem; ">
+                <div class="apartment-select" style="display: flex; flex: 2; flex-direction: column;">
+                    <label for="">Contact No.</label>
+                    <input type="number" placeholder="Enter phone number" style="height: 23px;" formControlName ="phone">
+                    <div *ngIf="postForm.get('phone')?.invalid && postForm.get('phone')?.touched">
+                        <small *ngIf="postForm.get('phone')?.errors?.['required']">Contact is required.</small>
+                      </div>
+                </div>
+                <div class="apartment-name" style="display: flex; flex: 2; flex-direction: column;">
+                    <label for="">Do you want your post to be featured?</label>
+                    <label style="display: flex;
+    align-items: center; margin-bottom: 0.2rem;">
+                <input type="radio" value="Yes" style="align-self: baseline;" formControlName ="featured">
+                Yes
+              </label>
+              <!-- <br> -->
+              <label style="display: flex;
+    align-items: center;">
+                <input type="radio" value="No" style="align-self: baseline;" formControlName ="featured">
+                No
+              </label>
+              <div *ngIf="postForm.get('featured')?.invalid && postForm.get('featured')?.touched">
+                <small *ngIf="postForm.get('featured')?.errors?.['required']">Featured type is required.</small>
               </div>
                 </div>
             </div>
